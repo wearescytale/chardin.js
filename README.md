@@ -1,5 +1,10 @@
 # Chardin.js
 
+**This fork contains some modifications from the original software.**
+
+This version of the software is modified to allow more precise positioning of
+the helper elements on the page.
+
 **Simple overlay instructions for your apps.**
 
 [Check out a demo](http://heelhook.github.com/chardin.js/).
