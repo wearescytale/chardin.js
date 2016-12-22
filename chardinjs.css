@@ -1,7 +1,7 @@
 .chardinjs-overlay {
   position: absolute;
   z-index: 999999;
-  background-color: #000;
+  background-color: #4F4F4F;
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -19,17 +19,72 @@
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
   .chardinjs-helper-layer.chardinjs-left {
-    border-left: solid white 1px;
     margin-left: -10px; }
+    .chardinjs-helper-layer.chardinjs-left:after, .chardinjs-helper-layer.chardinjs-left:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      left: -30px;
+      position: absolute; }
+    .chardinjs-helper-layer.chardinjs-left:after {
+      top: -40px; }
+    .chardinjs-helper-layer.chardinjs-left:before {
+      bottom: -40px;
+      transform: rotate(-90deg); }
   .chardinjs-helper-layer.chardinjs-right {
-    border-right: solid white 1px;
     padding-right: 10px; }
+    .chardinjs-helper-layer.chardinjs-right:after, .chardinjs-helper-layer.chardinjs-right:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      right: -30px;
+      position: absolute; }
+    .chardinjs-helper-layer.chardinjs-right:after {
+      top: -40px;
+      transform: rotate(90deg); }
+    .chardinjs-helper-layer.chardinjs-right:before {
+      bottom: -40px;
+      transform: rotate(180deg); }
   .chardinjs-helper-layer.chardinjs-bottom {
-    border-bottom: solid white 1px;
     padding-bottom: 10px; }
+    .chardinjs-helper-layer.chardinjs-bottom:after, .chardinjs-helper-layer.chardinjs-bottom:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      bottom: -30px;
+      position: absolute; }
+    .chardinjs-helper-layer.chardinjs-bottom:after {
+      right: -40px;
+      transform: rotate(180deg); }
+    .chardinjs-helper-layer.chardinjs-bottom:before {
+      left: -40px;
+      transform: rotate(-90deg); }
   .chardinjs-helper-layer.chardinjs-top {
-    border-top: solid white 1px;
     padding-top: 10px; }
+    .chardinjs-helper-layer.chardinjs-top:after, .chardinjs-helper-layer.chardinjs-top:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      top: -40px;
+      position: absolute; }
+    .chardinjs-helper-layer.chardinjs-top:after {
+      right: -40px;
+      transform: rotate(90deg); }
+    .chardinjs-helper-layer.chardinjs-top:before {
+      left: -40px;
+      transform: rotate(0deg); }
 
 .chardinjs-tooltip {
   position: absolute;
@@ -38,41 +93,49 @@
   -ms-transition: opacity 0.1s ease-out;
   -o-transition: opacity 0.1s ease-out;
   transition: opacity 0.1s ease-out;
-  max-width: 200px; }
+  max-width: 200px;
+  text-align: center; }
   .chardinjs-tooltip.chardinjs-left {
-    margin-left: -135px;
+    margin-left: -130px;
     padding-right: 10px; }
   .chardinjs-tooltip.chardinjs-right {
-    margin-right: -135px;
+    margin-right: -130px;
     padding-left: 10px; }
   .chardinjs-tooltip.chardinjs-bottom {
-    margin-bottom: -50px;
+    margin-bottom: -45px;
     padding-top: 10px; }
   .chardinjs-tooltip.chardinjs-top {
-    margin-top: -50px;
+    margin-top: -45px;
     padding-bottom: 10px; }
   .chardinjs-tooltip.chardinjs-right:before, .chardinjs-tooltip.chardinjs-left:after, .chardinjs-tooltip.chardinjs-bottom:before, .chardinjs-tooltip.chardinjs-top:after {
-    content: ".";
+    content: "";
     display: inline-block;
-    background-color: white;
-    height: 1px;
+    background-image: url("arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10px;
     overflow: hidden;
     position: absolute; }
   .chardinjs-tooltip.chardinjs-right:before, .chardinjs-tooltip.chardinjs-left:after {
-    width: 100px;
-    top: 50%; }
+    width: 70px;
+    height: 15px;
+    top: 20px; }
   .chardinjs-tooltip.chardinjs-bottom:before, .chardinjs-tooltip.chardinjs-top:after {
-    width: 1px;
-    height: 50px;
-    left: 50%; }
+    width: 155px;
+    height: 16px;
+    left: 20px; }
   .chardinjs-tooltip.chardinjs-bottom:before {
-    top: -50px; }
+    top: -110px;
+    transform: rotate(-90deg); }
   .chardinjs-tooltip.chardinjs-top:after {
-    bottom: -50px; }
+    bottom: -115px;
+    transform: rotate(90deg); }
   .chardinjs-tooltip.chardinjs-right:before {
-    left: -100px; }
+    left: -100px;
+    transform: rotate(180deg); }
   .chardinjs-tooltip.chardinjs-left:after {
-    right: -100px; }
+    right: -100px;
+    transform: rotate(0deg); }
 
 .chardinjs-show-element {
   z-index: 9999999;
