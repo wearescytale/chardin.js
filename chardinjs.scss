@@ -9,57 +9,159 @@
 .chardinjs-overlay {
   position: absolute;
   z-index: 999999;
-  background-color: #000;
+  background-color: #4F4F4F;
   opacity: 0;
   @include transition(all 0.3s ease-out);
 }
 
 .chardinjs-helper-layer {
+  $corner-size: 40px;
+
   position: absolute;
   z-index: 9999998;
   color: white;
   @include transition(all 0.3s ease-out);
 
-  &.chardinjs-left { border-left: solid white 1px; margin-left: -10px; }
-  &.chardinjs-right { border-right: solid white 1px; padding-right: 10px; }
-  &.chardinjs-bottom { border-bottom: solid white 1px; padding-bottom: 10px; }
-  &.chardinjs-top { border-top: solid white 1px; padding-top: 10px; }
+  &.chardinjs-left {
+    margin-left: -10px;
+
+    &:after,
+    &:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $corner-size;
+      width: $corner-size;
+      left: -$corner-size + 10px;
+      position: absolute;
+    }
+
+    &:after {
+      top: -$corner-size;
+    }
+
+    &:before {
+      bottom: -$corner-size;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.chardinjs-right {
+    padding-right: 10px;
+
+    &:after,
+    &:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $corner-size;
+      width: $corner-size;
+      right: -$corner-size + 10px;
+      position: absolute;
+    }
+
+    &:after {
+      top: -$corner-size;
+      transform: rotate(90deg);
+    }
+
+    &:before {
+      bottom: -$corner-size;
+      transform: rotate(180deg);
+    }
+  }
+  &.chardinjs-bottom {
+    padding-bottom: 10px;
+
+    &:after,
+    &:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $corner-size;
+      width: $corner-size;
+      bottom: -$corner-size + 10px;
+      position: absolute;
+    }
+
+    &:after {
+      right: -$corner-size;
+      transform: rotate(180deg);
+    }
+
+    &:before {
+      left: -$corner-size;
+      transform: rotate(-90deg);
+    }
+  }
+  &.chardinjs-top {
+    padding-top: 10px;
+
+    &:after,
+    &:before {
+      content: "";
+      background-image: url(lines.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $corner-size;
+      width: $corner-size;
+      top: -$corner-size;
+      position: absolute;
+    }
+
+    &:after {
+      right: -$corner-size;
+      transform: rotate(90deg);
+    }
+
+    &:before {
+      left: -$corner-size;
+      transform: rotate(0deg);
+    }
+  }
 }
 
 .chardinjs-tooltip {
   position: absolute;
   @include transition(opacity 0.1s ease-out);
   max-width: 200px;
+  text-align: center;
 
-  &.chardinjs-left { margin-left: -135px; padding-right: 10px; }
-  &.chardinjs-right { margin-right: -135px; padding-left: 10px; }
-  &.chardinjs-bottom { margin-bottom: -50px; padding-top: 10px; }
-  &.chardinjs-top { margin-top: -50px; padding-bottom: 10px; }
+  &.chardinjs-left { margin-left: -130px; padding-right: 10px; }
+  &.chardinjs-right { margin-right: -130px; padding-left: 10px; }
+  &.chardinjs-bottom { margin-bottom: -45px; padding-top: 10px; }
+  &.chardinjs-top { margin-top: -45px; padding-bottom: 10px; }
 
   &.chardinjs-right:before, &.chardinjs-left:after, &.chardinjs-bottom:before, &.chardinjs-top:after {
-    content: ".";
+    content: "";
     display: inline-block;
-    background-color: white;
-    height: 1px;
+    background-image: url('arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10px;
     overflow: hidden;
     position: absolute;
   }
 
   &.chardinjs-right:before, &.chardinjs-left:after {
-    width: 100px;
-    top: 50%;
+    width: 70px;
+    height: 15px;
+    top: 20px;
   }
 
   &.chardinjs-bottom:before, &.chardinjs-top:after {
-    width: 1px;
-    height: 50px;
-    left: 50%;
+    width: 155px;
+    height: 16px;
+    left: 20px;
   }
 
-  &.chardinjs-bottom:before { top: -50px; }
-  &.chardinjs-top:after { bottom: -50px; }
-  &.chardinjs-right:before { left: -100px; }
-  &.chardinjs-left:after { right: -100px; }
+  &.chardinjs-bottom:before { top: -110px; transform: rotate(-90deg); }
+  &.chardinjs-top:after { bottom: -115px; transform: rotate(90deg); }
+  &.chardinjs-right:before { left: -100px; transform: rotate(180deg); }
+  &.chardinjs-left:after { right: -100px; transform: rotate(0deg); }
 }
 
 .chardinjs-show-element {
