@@ -119,11 +119,11 @@
   .chardinjs-tooltip.chardinjs-right:before, .chardinjs-tooltip.chardinjs-left:after {
     width: 70px;
     height: 15px;
-    top: 20px; }
+    top: 25%; }
   .chardinjs-tooltip.chardinjs-bottom:before, .chardinjs-tooltip.chardinjs-top:after {
     width: 155px;
     height: 16px;
-    left: 20px; }
+    left: -25%; }
   .chardinjs-tooltip.chardinjs-bottom:before {
     top: -110px;
     transform: rotate(-90deg); }
